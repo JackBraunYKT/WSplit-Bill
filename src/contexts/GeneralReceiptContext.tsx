@@ -1,11 +1,11 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, SetStateAction } from "react";
 import { IGeneralPosition } from "../models/IPosition";
 
 type TGeneralReceiptContext = {
   totalPrice: number;
-  setTotalPrice: (price: number) => void;
+  setTotalPrice: (price: SetStateAction<number>) => void;
   positions: IGeneralPosition[];
-  setPositions: (positions: IGeneralPosition[]) => void;
+  setPositions: (positions: SetStateAction<IGeneralPosition[]>) => void;
 };
 
 export const GeneralReceiptContext = createContext<TGeneralReceiptContext>({

@@ -12,6 +12,7 @@ import { IPosition } from "../../models/IPosition";
 import "./style.css";
 import SmallReceipt from "./SmallReceipt";
 import BigReceipt from "./BigReceipt";
+import CardWithTitle from "../CardWithTitle";
 
 type Props = {
   name: string;
@@ -43,13 +44,10 @@ const Receipt: React.FC<Props> = ({ name, positions, totalPrice }) => {
   );
 
   return (
-    <Card>
-      <CardContent>
-        <Typography variant="h2">{name}</Typography>
-        {renderCardBody()}
-        {renderCardFooter()}
-      </CardContent>
-    </Card>
+    <CardWithTitle title={name}>
+      {renderCardBody()}
+      {renderCardFooter()}
+    </CardWithTitle>
   );
 };
 

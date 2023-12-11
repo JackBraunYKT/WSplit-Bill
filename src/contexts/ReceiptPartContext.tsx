@@ -1,11 +1,11 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { IReceiptPart } from "../models/IReceipt";
 
 type TReceiptPartContext = {
   receipts: IReceiptPart[];
-  setReceipts: (positions: IReceiptPart[]) => void;
+  setReceipts: (positions: React.SetStateAction<IReceiptPart[]>) => void;
   sumPrice: number;
-  setSumPrice: (price: number) => void;
+  setSumPrice: (value: React.SetStateAction<number>) => void;
 };
 
 export const ReceiptPartContext = createContext<TReceiptPartContext>({

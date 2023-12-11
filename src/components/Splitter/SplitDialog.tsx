@@ -13,7 +13,8 @@ type Props = {
 
 const SplitDialog: React.FC<Props> = ({ open, setOpen }) => {
   const { positions, setPositions } = React.useContext(GeneralReceiptContext);
-  const { receipts, setReceipts } = React.useContext(ReceiptPartContext);
+  const { receipts, setReceipts, setSumPrice } =
+    React.useContext(ReceiptPartContext);
 
   const initialSplittedValues: { [key: number]: number | null } = {};
 
@@ -75,6 +76,8 @@ const SplitDialog: React.FC<Props> = ({ open, setOpen }) => {
         currentQuantity: position.currentQuantity - (values[position.id] || 0),
       }))
     );
+
+    setSumPrice((prev) => prev + totalPrice);
 
     setName("");
     setValues(initialSplittedValues);

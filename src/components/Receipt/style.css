@@ -1,0 +1,23 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+
+  --mask: conic-gradient(
+        from 135deg at top,
+        #0000,
+        #000 1deg 89deg,
+        #0000 90deg
+      )
+      top/10.00px 51% repeat-x,
+    conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
+      bottom/10.00px 51% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+
+  filter: drop-shadow(10px 10px 40px rgba(0, 0, 0, 0.75));
+  -webkit-filter: drop-shadow(10px 10px 40px rgba(0, 0, 0, 0.75));
+  -moz-filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.75));
+  -ms-filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.75));
+  -o-filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.75));
+}
